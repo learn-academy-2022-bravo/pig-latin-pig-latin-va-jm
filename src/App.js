@@ -42,27 +42,31 @@ class App extends Component {
       // Using if, determine [0] vowel presence
       // If true, disregard and return [0]
       // If false, other if else statements
+      // If no other vowels, show placement of "y"
       // your code here!
       let allVowels = ['a', 'e', 'i', 'o', 'u']
       let vowelsNumArray = []
       let vowelsNumArray1 = () => {
-        
-        for(let i = 0; i < vowelsArray.length; i++){
+      let i = 0
           if (allVowels.indexOf(currentWord[0]) === -1) {
           if (vowelsArray[0] === "u"){
             if (currentWord[(currentWord.indexOf("q") + 1)] === "u"){
           return vowelsNumArray.push(currentWord.indexOf(vowelsArray[i]) + 1)
             } else {
           return vowelsNumArray.push(currentWord.indexOf(vowelsArray[i]))
-            }
-          }
+            } 
+          } else if (allVowels.indexOf(currentWord[0]) === -1) {
+
           return vowelsNumArray.push(currentWord.indexOf(vowelsArray[i]))
           //return vowelsNumArray.push(currentWord.indexOf(vowelsArray[i]))
-
+          } else {
+            return vowelsNumArray.push(currentWord.indexOf("y"))
+            //return vowelsNumArray.push(currentWord.indexOf('y'))
+          }
         } else {
-          return "there is a vowel in the first letter"
+          return vowelsNumArray.push(0)
         }
-      }
+
         // for(let i = 0; i < vowelsArray.length; i++){
         //   if (vowelsArray[0] === "u"){
         //     if (currentWord[(currentWord.indexOf("q") + 1)] === "u"){
@@ -83,15 +87,26 @@ class App extends Component {
         let wordSlice2 = currentWord.slice(vowelsNumArray)
         return wordSlice2 + wordSlice1
       }
-      console.log(vowelsNumArray1(currentWord))
-      console.log(slicer(currentWord))
+      vowelsNumArray1(currentWord)
+      // console.log(slicer(currentWord))
       //vowelsNumArray1(currentWord)
-      console.log(vowelsNumArray)
+      // console.log(vowelsNumArray)
       let ending = 'ay'
+      let wEnding = 'way'
       // Remember: console.log is your friend :)
-      let currentUpdatedWord = slicer(currentWord) + ending
+      let currentUpdatedWord = () => {
+        if (allVowels.indexOf(currentWord[0]) > -1) {
+        //if (vowelsNumArray === 0) {
+          return slicer() + wEnding
+        } else {
+          return slicer() + ending
+        }
+      }
+      // console.log(vowelsNumArray)
+      // console.log("glyph".indexOf("y"))
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentUpdatedWord
+      return currentUpdatedWord()
+
     })
 
 
