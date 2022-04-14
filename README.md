@@ -37,9 +37,15 @@ To get started, find the `myPigLatinCodeHere` function, and write your code. Eve
 - This is a difficult logic problem to solve, brainstorm with your team and create a road map for your approach.
 
 **MVP - Minimum Viable Product**
+- For words beginning with a vowel, add "way" to the end. 
+1. Return currentWord that begins in vowel + "way"
+2. Ensuring that return only applies to words beginning in vowel
 - As a user, I can type a series of English words into the Pig Latin application.
+1. User statement already solved by provided code
 - As a user, when I click Submit, I see a Pig Latin translation of the sentence I entered.
+1. Will be solved with the addition of starting vowel words and "y" words
 - As a user, the page is styled, and pleasing to use.
+1. Already solved by provided code
 
 **User Stretch Goals**
 - As a user, I can input a sentence that includes punctuation.
